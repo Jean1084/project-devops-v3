@@ -1,0 +1,12 @@
+.env
+.DS_Store
+.vagrant/
+setup/*
+script_rm_clean.sh
+setup_project.sh
+check_k8s_status.sh
+*.vdi
+disk-master.vdi
+disk-wordpress.vdi
+disk-registry.vdi
+disk-mysql.vdi
