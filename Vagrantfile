@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
     node_app_config.vm.provision "shell", path: SETUP_NODE_1
     node_app_config.vm.provider "virtualbox" do |vb|
       vb.name = "vm-node-app"
-      vb.memory = 1096
+      vb.memory = 1624
       vb.cpus  = 1
     end
 
@@ -40,7 +40,8 @@ Vagrant.configure("2") do |config|
       trigger.run = {
         inline: <<-SHELL
           echo "[Trigger - node-app] Lancement du ssh-copy-id depuis le master..."
-          vagrant ssh master -c "bash /home/vagrant/workspace/setup/setup_ssh_nodes.sh"
+          #vagrant ssh master -c "bash /home/vagrant/workspace/setup/setup_ssh_nodes.sh"
+          bash /home/vagrant/workspace/setup/setup_ssh_nodes.sh
         SHELL
       }
     end
@@ -53,7 +54,7 @@ Vagrant.configure("2") do |config|
     node_monitoring_config.vm.provision "shell", path: SETUP_NODE_2
     node_monitoring_config.vm.provider "virtualbox" do |vb|
       vb.name = "vm-node-monitoring"
-      vb.memory = 1096
+      vb.memory = 1624
       vb.cpus  = 1
     end
 
@@ -63,7 +64,8 @@ Vagrant.configure("2") do |config|
       trigger.run = {
         inline: <<-SHELL
           echo "[Trigger - node-monitoring] Lancement du ssh-copy-id depuis le master..."
-          vagrant ssh master -c "bash /home/vagrant/workspace/setup/setup_ssh_nodes.sh"
+          #vagrant ssh master -c "bash /home/vagrant/workspace/setup/setup_ssh_nodes.sh"
+          bash /home/vagrant/workspace/setup/setup_ssh_nodes.sh
         SHELL
       }
     end
