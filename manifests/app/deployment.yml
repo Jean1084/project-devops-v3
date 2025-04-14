@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jeu-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jeu-web
+  template:
+    metadata:
+      labels:
+        app: jeu-web
+    spec:
+      nodeSelector:
+        node-role: jeu
+      containers:
+        - name: jeu
+          image: jean1084/mon-jeu:latest
+          ports:
+            - containerPort: 3000

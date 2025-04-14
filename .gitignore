@@ -3,7 +3,6 @@
 .vagrant/
 setup/*
 script_rm_clean.sh
-setup_project.sh
 check_k8s_status.sh
 *.vdi
 disk-master.vdi
